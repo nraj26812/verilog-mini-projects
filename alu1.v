@@ -1,0 +1,22 @@
+module alu1 (a,b,c,se1,se0,y,c1,c2);
+input a,b,c,se1,se0;
+output y,c1,c2;
+wire s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,i1,i2,i3,i4;
+xor (s7,a,b);
+xor (i1,c,s7);
+and (s9,a,b);
+and (s8,s7,c);
+or (c1,s8,s9);
+xor (i2,a,b);
+not (s10,a);
+and (c2,s10,b);
+xnor (i3,a,b);
+nand (i4,a,b);
+not (s1,se1);
+not (s2,se0);
+and (s3,i0,s2,s1);
+and (s4,i1,se0,s1);
+and (s5,i2,s2,se1);
+and (s6,i3,se0,se1);
+or (y,s3,s4,s5,s6);
+endmodule
